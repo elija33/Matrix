@@ -1,18 +1,18 @@
 package MatrixSnakePattern;
 
 public class SnakePattern {
-    static int num = 4;
-    static int numb = 4;
+    static int row = 4;
+    static int column = 4;
 
     public static void printSnake(int number[][]){
-        for(int i = 0; i < num; i++){
+        for(int i = 0; i < row; i++){
             if(i % 2 == 0){
-                for(int j = 0; j < numb; j++){
+                for(int j = 0; j < column; j++){
                     System.out.print(number[i][j] + " ");
                 }
             }
             else{
-                for(int j = numb - 1; j >= 0; j--){
+                for(int j = column - 1; j >= 0; j--){
                     System.out.print(number[i][j]+ " ");
                 }
             }

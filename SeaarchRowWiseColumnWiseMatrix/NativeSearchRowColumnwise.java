@@ -3,6 +3,7 @@ package SeaarchRowWiseColumnWiseMatrix;
 public class NativeSearchRowColumnwise {
     static int row = 5;
     static int column = 5;
+    
     public static void search(int matrix[][], int terget){
         for(int i = 0; i < row; i++){
             for(int j = 0; j < column; j++){

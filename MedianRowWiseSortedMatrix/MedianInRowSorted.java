@@ -3,25 +3,25 @@ package MedianRowWiseSortedMatrix;
 import java.util.Arrays;
 
 public class MedianInRowSorted {
-    static public int matMed(int mat[][], int r ,int c)
+    static public int matMed(int mat[][], int row ,int column)
 {
-	int min = mat[0][0], max = mat[0][c-1];
-	for (int i=1; i<r; i++)
+	int min = mat[0][0], max = mat[0][column - 1];
+	for (int i = 1; i < row; i++)
 	{
 		if (mat[i][0] < min)
 			min = mat[i][0];
 
-		if (mat[i][c-1] > max)
-			max = mat[i][c-1];
+		if (mat[i][column - 1] > max)
+			max = mat[i][column - 1];
 	}
 
-	int medPos = (r * c + 1) / 2;
+	int medPos = (row * column + 1) / 2;
 	while (min < max)
 	{
 		int mid = (min + max) / 2;
 		int midPos = 0;
         int pos = 0;
-		for (int i = 0; i < r; ++i){
+		for (int i = 0; i < row; ++i){
 			    pos = Arrays.binarySearch(mat[i],mid);
                 
                 if(pos < 0)
@@ -46,9 +46,9 @@ public class MedianInRowSorted {
 
 public static void main(String[] args)
 {
-	int r = 3, c = 5;
+	int row = 3, column = 5;
 	int m[][]= { {5,10,20,30,40}, {1,2,3,4,6}, {11,13,15,17,19} };
-	System.out.println("Median is " + matMed(m, r, c)); 
+	System.out.println("Median is " + matMed(m, row, column)); 
 	
 }
 }
